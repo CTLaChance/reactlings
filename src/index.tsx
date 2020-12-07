@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './components/Header';
+import Reactlings from './components/Reactlings';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Header />
+        <Reactlings />
     </React.StrictMode>,
     document.getElementById('root')
 );
