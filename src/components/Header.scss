@@ -26,32 +26,3 @@
         }
     }
 }
-
-.projects-grid {
-    width: 75%;
-    margin: 25px auto;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
-    grid-gap: 5px;
-
-    // Mobile design.
-    @media screen and (orientation: portrait) {
-        display: flex;
-        flex-direction: column;
-    }
-
-    > * {
-        height: 250px;
-        box-shadow: 5px 5px 5px rgba($color: #000000, $alpha: 0.2);
-    }
-}
-
-.project {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    margin: 25px auto;
-    width: 80%;
-}
