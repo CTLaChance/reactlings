@@ -1,21 +1,16 @@
-import React, {Fragment} from 'react'
+import React, {Component, Fragment} from 'react'
 
 // Components //
 import Header from './Header';
 import ProjectGrid from './ProjectGrid';
 import ProjectDetails from './ProjectDetails';
 
-
-interface IProps {
-
-}
-
-interface ReactlingsState {
+interface IState {
     ViewedProjectIndex?: number;
 }
 
-export default class Reactlings extends React.Component<IProps, ReactlingsState> {
-    state: ReactlingsState = {
+export default class Reactlings extends Component<IState> {
+    state: IState = {
         // ViewedProjectIndex: 1
     }
 
@@ -23,7 +18,11 @@ export default class Reactlings extends React.Component<IProps, ReactlingsState>
         return (
             <Fragment>
                 <Header />
-                {this.state?.ViewedProjectIndex == null ? <ProjectGrid /> : <ProjectDetails />}
+                {
+                    this.state?.ViewedProjectIndex == null ?
+                    <ProjectGrid /> :
+                    <ProjectDetails ProjectName="null" CodeEmbedLinks={["CodeEmbedLinks", "null"]}/>
+                }
             </Fragment>
         )
     }

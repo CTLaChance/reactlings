@@ -1,11 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment} from 'react'
 
-export default class ProjectDetails extends Component {
+interface IProps {
+    ProjectName: string;
+    CodeEmbedLinks: Array<string>;
+}
+
+export default class ProjectDetails extends Component<IProps> {
     render() {
         return (
-            <div>
-                This is the project details component.
-            </div>
+            <Fragment>
+                <div>Viewing Project : {this.props.ProjectName}</div>
+            </Fragment>
         )
     }
 }

@@ -8,7 +8,7 @@ export default class ProjectGrid extends Component {
             <Fragment>
                 <div id="project-grid">
                     {projects.map((project, index) => {
-                        return (<div>{project[0]}</div>)
+                        return (<div>{project[0]}</div>);
                     })}
                 </div>
             </Fragment>
