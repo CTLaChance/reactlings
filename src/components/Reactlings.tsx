@@ -11,7 +11,7 @@ interface IState {
 
 export default class Reactlings extends Component<IState> {
     state: IState = {
-        // ViewedProjectIndex: 1
+        ViewedProjectIndex: 1
     }
 
     render() {
@@ -21,7 +21,7 @@ export default class Reactlings extends Component<IState> {
                 {
                     this.state?.ViewedProjectIndex == null ?
                     <ProjectGrid /> :
-                    <ProjectDetails ProjectName="null" CodeEmbedLinks={["CodeEmbedLinks", "null"]}/>
+                    <ProjectDetails ProjectName="null" CodeEmbedLinks={["https://github.com/CTLaChance/reactlings/blob/main/src/index.tsx"]}/>
                 }
             </Fragment>
         )
