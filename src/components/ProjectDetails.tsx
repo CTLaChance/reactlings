@@ -9,6 +9,7 @@ interface IProps {
 }
 
 export default class ProjectDetails extends Component<IProps> {
+    SourceCode: string = "let x = 12;";
 
     render() {
         return (
@@ -16,7 +17,7 @@ export default class ProjectDetails extends Component<IProps> {
                 <div>Viewing Project : {this.props.ProjectName}</div>
                 <div id="source-code">
                     <SyntaxHighlighter language="typescript" showLineNumbers={true} style={atomOneDarkReasonable}>
-                        {'(num) => num + 1'}
+                        {this.SourceCode}
                     </SyntaxHighlighter>
                 </div>
             </Fragment>

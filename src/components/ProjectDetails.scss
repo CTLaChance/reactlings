@@ -1,4 +1,8 @@
 #source-code {
     width: 60%;
     margin: 16px auto;
+
+    > * {
+        border-radius: 5px;
+    }
 }
