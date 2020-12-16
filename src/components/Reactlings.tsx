@@ -21,7 +21,7 @@ export default class Reactlings extends Component<IState> {
                 {
                     this.state?.ViewedProjectIndex == null ?
                     <ProjectGrid /> :
-                    <ProjectDetails ProjectName="null" CodeEmbedLinks={["https://github.com/CTLaChance/reactlings/blob/main/src/index.tsx"]}/>
+                    <ProjectDetails ProjectName="null" CodeEmbedLinks={["https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/index.tsx"]}/>
                 }
             </Fragment>
         )
