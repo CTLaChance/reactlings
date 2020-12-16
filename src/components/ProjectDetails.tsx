@@ -17,7 +17,7 @@ export default class ProjectDetails extends Component<IProps, IState> {
         super(props);
 
         this.state = {
-            SourceCodeArray: ["let x = 12;"]
+            SourceCodeArray: []
         }
     }
 
