@@ -5,13 +5,21 @@ import Header from './Header';
 import ProjectGrid from './ProjectGrid';
 import ProjectDetails from './ProjectDetails';
 
+import projects from '../projects/projects.json'
+
 interface IState {
-    ViewedProjectIndex?: number;
+    ViewedProject?: string;
+}
+
+interface Projects {
+    HelloWorld: Array<string>;
+    TodoList: Array<string>;
+    Calculator: Array<string>;
 }
 
 export default class Reactlings extends Component<IState> {
     state: IState = {
-        ViewedProjectIndex: 1
+        ViewedProject: "TodoList"
     }
 
     render() {
@@ -19,9 +27,9 @@ export default class Reactlings extends Component<IState> {
             <Fragment>
                 <Header />
                 {
-                    this.state?.ViewedProjectIndex == null ?
+                    this.state?.ViewedProject == null ?
                     <ProjectGrid /> :
-                    <ProjectDetails ProjectName="null" CodeEmbedLinks={["https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/index.tsx"]}/>
+                    <ProjectDetails ProjectName={this.state.ViewedProject} CodeEmbedLinks={projects[this.state.ViewedProject as keyof Projects]}/>
                 }
             </Fragment>
         )

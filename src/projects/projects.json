@@ -1,5 +1,17 @@
-[
-    ["HelloWorld.tsx"],
-    ["TodoList.tsx", "TodoList2.tsx"],
-    ["Calculator.tsx"]
-]
+{
+    "HelloWorld":
+    [
+        "https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/00_HelloWorld/HelloWorld.tsx"
+    ],
+
+    "TodoList": 
+    [
+        "https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/01_TodoList/TodoList.tsx",
+        "https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/01_TodoList/TodoList2.tsx"
+    ],
+
+    "Calculator":
+    [
+        "https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/02_Calculator/Calculator.tsx"
+    ]
+}
