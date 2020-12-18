@@ -4,7 +4,7 @@ import { atomOneDarkReasonable } from 'react-syntax-highlighter/dist/esm/styles/
 import './ProjectDetails.scss';
 
 interface IProps {
-    ProjectName: string;
+    ProjectComponent: React.ReactChild;
     CodeEmbedLinks: Array<string>;
 }
 
@@ -15,7 +15,7 @@ interface IState {
 export default class ProjectDetails extends Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
-
+        
         this.state = {
             SourceCodeArray: []
         }
@@ -40,12 +40,12 @@ export default class ProjectDetails extends Component<IProps, IState> {
     render() {
         return (
             <Fragment>
-                <div>Viewing Project : {this.props.ProjectName}</div>
+                <div>{this.props.ProjectComponent}</div>
                 <div id="source-code">
-                    {this.state.SourceCodeArray.map((value, index) => {
+                    {this.state.SourceCodeArray.map((code) => {
                         return (
                             <SyntaxHighlighter language="typescript" showLineNumbers={true} style={atomOneDarkReasonable}>
-                                {this.state.SourceCodeArray[index]}
+                                {code}
                             </SyntaxHighlighter>
                         )
                     })}
