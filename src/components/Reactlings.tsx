@@ -5,12 +5,14 @@ import Header from './Header';
 import ProjectGrid from './ProjectGrid';
 import ProjectDetails from './ProjectDetails';
 
+import HelloWorld from '../projects/00_HelloWorld/HelloWorld'
+
 // Projects //
 import projects from '../projects/projects.json'
 interface IProjects {
-    HelloWorld: Array<string>;
-    TodoList: Array<string>;
-    Calculator: Array<string>;
+    HelloWorld: object;
+    TodoList: object;
+    Calculator: object;
 }
 
 interface IState {
@@ -29,7 +31,9 @@ export default class Reactlings extends Component<IState> {
                 {
                     this.state?.ViewedProject == null ?
                     <ProjectGrid /> :
-                    <ProjectDetails ProjectName={this.state.ViewedProject} CodeEmbedLinks={projects[this.state.ViewedProject as keyof IProjects]}/>
+                    <ProjectDetails ProjectComponent = {<HelloWorld />}
+                                    CodeEmbedLinks = {projects[this.state.ViewedProject as keyof IProjects].embedLinks}
+                    />
                 }
             </Fragment>
         )
