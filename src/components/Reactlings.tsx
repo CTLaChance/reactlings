@@ -21,7 +21,7 @@ interface IState {
 
 export default class Reactlings extends Component<IState> {
     state: IState = {
-        ViewedProject: "TodoList"
+        ViewedProject: "HelloWorld"
     }
 
     render() {

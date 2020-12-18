@@ -40,7 +40,7 @@ export default class ProjectDetails extends Component<IProps, IState> {
     render() {
         return (
             <Fragment>
-                <div>{this.props.ProjectComponent}</div>
+                <div id="project">{this.props.ProjectComponent}</div>
                 <div id="source-code">
                     {this.state.SourceCodeArray.map((code) => {
                         return (
