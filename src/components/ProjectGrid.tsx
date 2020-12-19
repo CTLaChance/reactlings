@@ -3,6 +3,7 @@ import './ProjectGrid.scss';
 
 interface IProps {
     Projects: Array<string>;
+    OnClickCallback: (value: string) => void;
 }
 
 export default class ProjectGrid extends Component<IProps> {
@@ -11,7 +12,7 @@ export default class ProjectGrid extends Component<IProps> {
             <Fragment>
                 <div id="project-grid">
                     {Object.values(this.props.Projects).map((project) => {
-                        return (<div>{project}</div>);
+                        return (<div onClick={() => this.props.OnClickCallback(project)}>{project}</div>);
                     })}
                 </div>
             </Fragment>

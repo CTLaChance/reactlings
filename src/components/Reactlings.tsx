@@ -21,6 +21,11 @@ interface IState {
 }
 
 export default class Reactlings extends Component {
+    constructor(props: any) {
+        super(props);
+        this.handleGridClick = this.handleGridClick.bind(this);
+    }
+
     state: IState = {
         // Project: Projects.HelloWorld
     }
@@ -48,13 +53,37 @@ export default class Reactlings extends Component {
         }
     }
 
+    handleGridClick(value: string) {
+        let newProject : Projects | undefined;
+
+        switch(value) {
+            case "HelloWorld":
+                newProject = Projects.HelloWorld;
+                break;
+            case "TodoList":
+                newProject = Projects.TodoList;
+                break;
+            case "Calculator":
+                newProject = Projects.Calculator;
+                break;
+        }
+
+        this.setState({
+            Project: newProject
+        });
+
+        console.log(`Value: ${value}`);
+    }
+
     render() {
         return (
             <Fragment>
                 <Header />
                 {
                     this.state?.Project == null ?
-                    <ProjectGrid Projects = {Object.keys(Projects).filter(key => isNaN(key as any))}/> :
+                    <ProjectGrid    Projects = {Object.keys(Projects).filter(key => isNaN(key as any))}
+                                    OnClickCallback = {this.handleGridClick}
+                    /> :
                     <ProjectDetails ProjectComponent = {this.getProjectComponent(this.state.Project)}
                                     CodeEmbedLinks = {this.getProjectEmbedLinks(this.state.Project)}
                     />
