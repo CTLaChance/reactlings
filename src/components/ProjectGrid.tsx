@@ -11,8 +11,8 @@ export default class ProjectGrid extends Component<IProps> {
         return (
             <Fragment>
                 <div id="project-grid">
-                    {Object.values(this.props.Projects).map((project) => {
-                        return (<div onClick={() => this.props.OnClickCallback(project)}>{project}</div>);
+                    {Object.values(this.props.Projects).map((project, index) => {
+                        return (<div key={index} onClick={() => this.props.OnClickCallback(project)}>{project}</div>);
                     })}
                 </div>
             </Fragment>
