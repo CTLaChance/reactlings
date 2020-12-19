@@ -15,5 +15,10 @@
         border-radius: 10px;
         box-shadow: -4px 4px 8px rgba($color: black, $alpha: .2);
         height: calc((70vw - 32px) / 3);
+        line-height: calc((70vw - 32px) / 3);
+
+        font-weight: bold;
+
+        cursor: pointer;
     }
 }
