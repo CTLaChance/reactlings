@@ -1,13 +1,16 @@
 import React, { Component, Fragment } from 'react';
-import projects from '../projects/projects.json';
 import './ProjectGrid.scss';
 
-export default class ProjectGrid extends Component {
+interface IProps {
+    Projects: Array<string>;
+}
+
+export default class ProjectGrid extends Component<IProps> {
     render() {
         return (
             <Fragment>
                 <div id="project-grid">
-                    {Object.keys(projects).map((project) => {
+                    {Object.values(this.props.Projects).map((project) => {
                         return (<div>{project}</div>);
                     })}
                 </div>
