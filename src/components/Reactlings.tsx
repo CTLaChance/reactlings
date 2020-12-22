@@ -17,62 +17,48 @@ enum Projects {
 }
 
 interface IState {
-    Project?: Projects;
+    ProjectComponent?: React.ReactChild;
+    CodeEmbedLinks?: Array<string>;
 }
 
-export default class Reactlings extends Component {
+export default class Reactlings extends Component<{}, IState> {
     constructor(props: any) {
         super(props);
-        this.handleGridClick = this.handleGridClick.bind(this);
+        this.ChangeDisplayedProject = this.ChangeDisplayedProject.bind(this);
+        this.ResetDisplayedProject = this.ResetDisplayedProject.bind(this);
     }
 
-    state: IState = {
-        // Project: Projects.HelloWorld
-    }
-
-    getProjectEmbedLinks(project: Projects) {
-        switch(project) {
-            case Projects.HelloWorld: 
-                return ["https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/00_HelloWorld/HelloWorld.tsx"]
-            case Projects.TodoList:
-                return ["https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/01_TodoList/TodoList.tsx",
-                        "https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/01_TodoList/TodoList2.tsx"]
-            case Projects.Calculator: 
-                return ["https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/02_Calculator/Calculator.tsx"]
-        }
-    }
-
-    getProjectComponent(project: Projects) {
-        switch(project) {
-            case Projects.HelloWorld: 
-                return <HelloWorld />
-            case Projects.TodoList:
-                return <TodoList />
-            case Projects.Calculator: 
-                return <Calculator />
-        }
-    }
-
-    handleGridClick(value: string) {
-        let newProject : Projects | undefined;
+    ChangeDisplayedProject(value: string) {
+        let newProjectComponent : React.ReactChild | undefined;
+        let newCodeEmbedLinks : Array<string> | undefined;
 
         switch(value) {
             case "HelloWorld":
-                newProject = Projects.HelloWorld;
+                newProjectComponent = <HelloWorld />;
+                newCodeEmbedLinks = ["https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/00_HelloWorld/HelloWorld.tsx"];
                 break;
             case "TodoList":
-                newProject = Projects.TodoList;
+                newProjectComponent = <TodoList />;
+                newCodeEmbedLinks = ["https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/01_TodoList/TodoList.tsx",
+                                     "https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/01_TodoList/TodoList2.tsx"];
                 break;
             case "Calculator":
-                newProject = Projects.Calculator;
+                newProjectComponent = <Calculator />;
+                newCodeEmbedLinks = ["https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/02_Calculator/Calculator.tsx"];
                 break;
         }
 
         this.setState({
-            Project: newProject
+            ProjectComponent: newProjectComponent,
+            CodeEmbedLinks: newCodeEmbedLinks
         });
+    }
 
-        console.log(`Value: ${value}`);
+    ResetDisplayedProject() {
+        this.setState({
+            ProjectComponent: undefined,
+            CodeEmbedLinks: undefined
+        })
     }
 
     render() {
@@ -80,12 +66,13 @@ export default class Reactlings extends Component {
             <Fragment>
                 <Header />
                 {
-                    this.state?.Project == null ?
+                    (this.state?.ProjectComponent == null || this.state?.CodeEmbedLinks == null) ?
                     <ProjectGrid    Projects = {Object.keys(Projects).filter(key => isNaN(key as any))}
-                                    OnClickCallback = {this.handleGridClick}
+                                    OnClickCallback = {this.ChangeDisplayedProject}
                     /> :
-                    <ProjectDetails ProjectComponent = {this.getProjectComponent(this.state.Project)}
-                                    CodeEmbedLinks = {this.getProjectEmbedLinks(this.state.Project)}
+                    <ProjectDetails ProjectComponent = {this.state.ProjectComponent}
+                                    CodeEmbedLinks = {this.state.CodeEmbedLinks}
+                                    ReturnArrowCallback = {this.ResetDisplayedProject}
                     />
                 }
             </Fragment>
