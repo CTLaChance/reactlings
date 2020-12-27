@@ -46,9 +46,9 @@ export default class ProjectDetails extends Component<IProps, IState> {
                 </div>
                 <div id="project">{this.props.ProjectComponent}</div>
                 <div id="source-code">
-                    {this.state.SourceCodeArray.map((code) => {
+                    {this.state.SourceCodeArray.map((code, index) => {
                         return (
-                            <SyntaxHighlighter language="typescript" showLineNumbers={true} style={atomOneDarkReasonable}>
+                            <SyntaxHighlighter key={index} language="typescript" showLineNumbers={true} style={atomOneDarkReasonable}>
                                 {code}
                             </SyntaxHighlighter>
                         )
