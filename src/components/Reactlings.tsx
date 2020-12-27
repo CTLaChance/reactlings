@@ -7,8 +7,7 @@ import ProjectDetails from './ProjectDetails/ProjectDetails';
 
 // Projects //
 import HelloWorld from '../projects/00_HelloWorld/HelloWorld';
-import TodoList from '../projects/01_TodoList/TodoList';
-import Calculator from '../projects/02_Calculator/Calculator';
+import SlidingPuzzle from '../projects/01_SlidingPuzzle/SlidingPuzzle';
 
 const Projects: any = {
     "HelloWorld": {
@@ -16,19 +15,8 @@ const Projects: any = {
         CodeEmbedLinks: ["https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/00_HelloWorld/HelloWorld.tsx"]
     },
 
-    "TodoList": {
-        ProjectComponent: <TodoList />,
-        CodeEmbedLinks: ["https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/01_TodoList/TodoList.tsx",
-                         "https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/01_TodoList/TodoList2.tsx"]
-    },
-
-    "Calculator": {
-        ProjectComponent: <Calculator />,
-        CodeEmbedLinks: ["https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/02_Calculator/Calculator.tsx"]
-    },
-
-    "15 Sliding Puzzle": {
-        ProjectComponent: <Calculator />,
+    "Sliding Puzzle": {
+        ProjectComponent: <SlidingPuzzle />,
         CodeEmbedLinks: []
     }
 };
@@ -38,7 +26,7 @@ interface IState {
 }
 
 export default class Reactlings extends Component<{}, IState> {
-    // state: IState = { Project: "HelloWorld"}
+    state: IState = { Project: "Sliding Puzzle"}
 
     render() {
         return (
