@@ -23,8 +23,8 @@ export default class ProjectDetails extends Component<IProps, IState> {
     }
 
     componentDidMount() {
-        this.props.CodeEmbedLinks.forEach((url: string) => {
-            fetch(url).then(async (response: Response) => {
+        this.props.CodeEmbedLinks.forEach(async (url: string) => {
+            await fetch(url).then(async (response: Response) => {
                 if(response.ok) {
                     let NewSourceCodeArray: Array<string> = this.state.SourceCodeArray;
 
