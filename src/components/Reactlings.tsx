@@ -35,8 +35,8 @@ export default class Reactlings extends Component<{}, IState> {
                 {
                     (this.state?.Project == null) ?
                     <ProjectGrid    Projects = {Object.keys(Projects)}
-                                    GridItemClickCallback = {(value) => {this.setState({
-                                        Project: value
+                                    GridItemClickCallback = {(project: string) => {this.setState({
+                                        Project: project
                                     })}}
                     /> :
                     <ProjectDetails ProjectComponent = {Projects[this.state.Project].ProjectComponent}
