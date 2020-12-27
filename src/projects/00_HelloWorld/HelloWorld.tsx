@@ -1,9 +1,3 @@
-import React, { Component } from 'react'
-
-export default class HelloWorld extends Component {
-    render() {
-        return (
-            <div>Hello World!</div>
-        )
-    }
+export default function HelloWorld() {
+    return <div>Hello World!</div>;
 }
