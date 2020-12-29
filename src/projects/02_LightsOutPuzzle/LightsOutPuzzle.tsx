@@ -6,14 +6,20 @@ interface IState {
 }
 
 export default class LightsOutPuzzle extends Component<{}, IState> {
-    state: IState = {
-        LightArray: [[false, false, false],
-                     [false, false, false],
-                     [false, false, false]]
+    constructor(props: {}) {
+        super(props);
+
+        this.state = {
+            LightArray: [[false, false, false],
+                         [false, false, false],
+                         [false, false, false]]
+        }
+
+        this.RandomizeGrid(5);
     }
 
     HandleClick(row: number, column: number) {
-        // console.log(`Clicked Row: ${row} - Column: ${column}`)
+        console.log(`Clicked Row: ${row} - Column: ${column}`)
 
         let NewLightArray: boolean[][] = this.state.LightArray;
 
@@ -38,6 +44,15 @@ export default class LightsOutPuzzle extends Component<{}, IState> {
         this.setState({
             LightArray: NewLightArray
         });
+    }
+
+    RandomizeGrid(NumberOfSteps: number) {
+        for(let i = 0; i < NumberOfSteps; i++) {
+            let row = Math.round(Math.random() * (this.state.LightArray.length - 1));
+            let column = Math.round(Math.random() * (this.state.LightArray[0].length - 1));
+
+            this.HandleClick(row, column)
+        }
     }
 
     render() {
