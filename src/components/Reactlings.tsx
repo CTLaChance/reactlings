@@ -23,7 +23,8 @@ const Projects: any = {
 
     "Lights Out Puzzle": {
         ProjectComponent: <LightsOutPuzzle />,
-        CodeEmbedLinks: []
+        CodeEmbedLinks: ["https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/02_LightsOutPuzzle/LightsOutPuzzle.tsx",
+                        "https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/02_LightsOutPuzzle/LightsOutPuzzle.scss"]
     }
 };
 
