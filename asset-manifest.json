@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/reactlings/static/css/main.682925ad.chunk.css",
-    "main.js": "/reactlings/static/js/main.7e716188.chunk.js",
-    "main.js.map": "/reactlings/static/js/main.7e716188.chunk.js.map",
+    "main.css": "/reactlings/static/css/main.0e9bd8a8.chunk.css",
+    "main.js": "/reactlings/static/js/main.18b1dc24.chunk.js",
+    "main.js.map": "/reactlings/static/js/main.18b1dc24.chunk.js.map",
     "runtime-main.js": "/reactlings/static/js/runtime-main.bf3e7037.js",
     "runtime-main.js.map": "/reactlings/static/js/runtime-main.bf3e7037.js.map",
-    "static/js/2.30f567a5.chunk.js": "/reactlings/static/js/2.30f567a5.chunk.js",
-    "static/js/2.30f567a5.chunk.js.map": "/reactlings/static/js/2.30f567a5.chunk.js.map",
+    "static/js/2.73ea8fad.chunk.js": "/reactlings/static/js/2.73ea8fad.chunk.js",
+    "static/js/2.73ea8fad.chunk.js.map": "/reactlings/static/js/2.73ea8fad.chunk.js.map",
     "index.html": "/reactlings/index.html",
-    "static/css/main.682925ad.chunk.css.map": "/reactlings/static/css/main.682925ad.chunk.css.map",
-    "static/js/2.30f567a5.chunk.js.LICENSE.txt": "/reactlings/static/js/2.30f567a5.chunk.js.LICENSE.txt",
+    "static/css/main.0e9bd8a8.chunk.css.map": "/reactlings/static/css/main.0e9bd8a8.chunk.css.map",
+    "static/js/2.73ea8fad.chunk.js.LICENSE.txt": "/reactlings/static/js/2.73ea8fad.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/reactlings/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.bf3e7037.js",
-    "static/js/2.30f567a5.chunk.js",
-    "static/css/main.682925ad.chunk.css",
-    "static/js/main.7e716188.chunk.js"
+    "static/js/2.73ea8fad.chunk.js",
+    "static/css/main.0e9bd8a8.chunk.css",
+    "static/js/main.18b1dc24.chunk.js"
   ]
 }
