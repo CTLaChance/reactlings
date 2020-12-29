@@ -22,20 +22,18 @@ export default class ProjectDetails extends Component<IProps, IState> {
         }
     }
 
-    componentDidMount() {
-        this.props.CodeEmbedLinks.forEach(async (url: string) => {
-            await fetch(url).then(async (response: Response) => {
-                if(response.ok) {
-                    let NewSourceCodeArray: Array<string> = this.state.SourceCodeArray;
+    async componentDidMount() {
+        let NewSourceCodeArray: Array<string> = await Promise.all(
+            this.props.CodeEmbedLinks.map(async (url: string) => {
+                return await fetch(url).then(async (response: Response) => {
+                        return await response.text();
+                });
+            })
+        )
 
-                    NewSourceCodeArray.push(await response.text());
-
-                    this.setState({
-                        SourceCodeArray: NewSourceCodeArray
-                    });
-                }
-            });
-        });
+        this.setState({
+            SourceCodeArray: NewSourceCodeArray
+        })
     }
 
     render() {
