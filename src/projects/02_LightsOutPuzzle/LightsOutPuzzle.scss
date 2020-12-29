@@ -1,0 +1,22 @@
+$grid-item-height: calc((75vw - 32px) / 3);
+
+#lights-out-puzzle {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 16px;
+    
+    > * {
+        height: $grid-item-height;
+
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .false {
+        background-color: rgba($color: black, $alpha: 0.5);
+    }
+    
+    .true {
+        background-color: rgba($color: yellow, $alpha: 1);
+    }
+}

@@ -8,6 +8,7 @@ import ProjectDetails from './ProjectDetails/ProjectDetails';
 // Projects //
 import HelloWorld from '../projects/00_HelloWorld/HelloWorld';
 import SlidingPuzzle from '../projects/01_SlidingPuzzle/SlidingPuzzle';
+import LightsOutPuzzle from '../projects/02_LightsOutPuzzle/LightsOutPuzzle';
 
 const Projects: any = {
     "HelloWorld": {
@@ -18,6 +19,11 @@ const Projects: any = {
     "Sliding Puzzle": {
         ProjectComponent: <SlidingPuzzle />,
         CodeEmbedLinks: []
+    },
+
+    "Lights Out Puzzle": {
+        ProjectComponent: <LightsOutPuzzle />,
+        CodeEmbedLinks: []
     }
 };
 
@@ -26,7 +32,7 @@ interface IState {
 }
 
 export default class Reactlings extends Component<{}, IState> {
-    state: IState = { Project: "Sliding Puzzle"}
+    state: IState = { Project: "Lights Out Puzzle"}
 
     render() {
         return (
