@@ -1,0 +1,25 @@
+$grid-item-height: calc(min((75vw - 48px) / 4, 16.25vh));
+
+#sliding-puzzle {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 16px;
+    
+    max-height: 70vh;
+    max-width: 70vh;
+    margin: 0 auto;
+
+    > * {
+        height: $grid-item-height;
+
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1px solid black;
+
+        text-align: center;
+        line-height: $grid-item-height;
+
+        font-weight: bold;
+        font-size: 32px;
+    }
+}
