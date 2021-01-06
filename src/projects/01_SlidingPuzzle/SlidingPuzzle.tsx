@@ -15,6 +15,8 @@ export default class SlidingPuzzle extends Component<{}, IState> {
                          [9, 10, 11, 12],
                          [13, 14, 15, 0]]
         }
+
+        this.ShuffleGrid();
     }
 
     HandleClick(row: number, column: number) {
@@ -22,7 +24,7 @@ export default class SlidingPuzzle extends Component<{}, IState> {
     }
 
     ShuffleGrid() {
-        
+        console.log("Shuffle grid!");
     }
 
     render() {
@@ -30,7 +32,9 @@ export default class SlidingPuzzle extends Component<{}, IState> {
             <div id="sliding-puzzle">
                 {this.state.LightArray.map((subarray: number[], row: number) => {
                     return subarray.map((number: number, column: number) => {
-                        return <div key={`${number}`} onClick={() => this.HandleClick(row, column)}>{number}</div>
+                        return  <div key={`${number}`} className={(number === 0) ? "empty-tile" : "tile"} onClick={() => this.HandleClick(row, column)}>
+                                    {(number !== 0) ? number : null}
+                                </div>
                     })
                 })}
             </div>

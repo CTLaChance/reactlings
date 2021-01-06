@@ -22,4 +22,9 @@ $grid-item-height: calc(min((75vw - 48px) / 4, 16.25vh));
         font-weight: bold;
         font-size: 32px;
     }
+
+    .empty-tile {
+        background-color: rgba(black, 0.25);
+        cursor: default;
+    }
 }
