@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './LightsOutPuzzle.scss';
 
 interface IState {
-    LightArray: boolean[][];
+    LightArray: boolean[][]
 }
 
 export default class LightsOutPuzzle extends Component<{}, IState> {
