@@ -47,9 +47,8 @@ export default class SlidingPuzzle extends Component<{}, IState> {
     }
 
     ShuffleGrid() {
-        
-
-
+        // TODO: Implement a shuffle algorithm sometime.
+        // This is apparently quite complex.
     }
 
     render() {
@@ -65,7 +64,7 @@ export default class SlidingPuzzle extends Component<{}, IState> {
                 })}
             </div>
             <div id="move-counter">
-                {`Moves Made: ${this.state.NumberOfMoves}`}
+                <p>{`Moves Made: ${this.state.NumberOfMoves}`}</p>
             </div>
             </React.Fragment>
         )

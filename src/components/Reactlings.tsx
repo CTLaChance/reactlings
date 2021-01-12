@@ -18,7 +18,8 @@ const Projects: any = {
 
     "Sliding Puzzle": {
         ProjectComponent: <SlidingPuzzle />,
-        CodeEmbedLinks: []
+        CodeEmbedLinks: ["https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/01_SlidingPuzzle/SlidingPuzzle.tsx",
+                         "https://raw.githubusercontent.com/CTLaChance/reactlings/main/src/projects/01_SlidingPuzzle/SliddingPuzzle.scss"]
     },
 
     "Lights Out Puzzle": {
@@ -33,7 +34,7 @@ interface IState {
 }
 
 export default class Reactlings extends Component<{}, IState> {
-    state: IState = { Project: "Sliding Puzzle"}
+    // state: IState = { Project: "Sliding Puzzle"}
 
     render() {
         return (

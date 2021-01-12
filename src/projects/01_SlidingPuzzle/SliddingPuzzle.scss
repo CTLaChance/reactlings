@@ -28,3 +28,15 @@
         cursor: default;
     }
 }
+
+#move-counter {
+    margin-top: 16px;
+    text-align: center;
+
+    p {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 8px;
+        margin: 0;
+    }
+}
